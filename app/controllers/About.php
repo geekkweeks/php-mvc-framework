@@ -1,15 +1,17 @@
 <?php
 
-class About
+class About extends Controller
 {
     //method default
     public function index($name = '', $job = '')
     {
-        echo "My name $name and my job is $job";
+        $data['name'] = $name;
+        $data['job'] = $job;
+        $this->view('about/index', $data);
     }
 
     public function page()
     {
-        echo "About/page";
+        $this->view('about/page');
     }
 }
